@@ -17,6 +17,37 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+function steps(n) {
+  /* My Solution */
+  // for (let i = 1; i <= n; i++) {
+  //   let step = '';
+  //   // First loop will add the number of # for each step
+  //   for (let j = 1; j <= i; j++) {
+  //     step += '#';
+  //   }
+  //   // If the current step is less than n, loop through and add spaces at the end
+  //   if (i < n) {
+  //     for (let k = 0; k < n - i; k++) {
+  //       step += ' ';
+  //     }
+  //   }
+
+  //   console.log(step);
+  // }
+  /* Grider Solution - Recommended */
+  for (let row = 0; row < n; row++) {
+    let stair = ''; 
+
+    for (let column = 0; column < n; column++) {
+      if (column <= row) {
+        stair += '#';
+      } else {
+        stair += ' ';
+      }
+    }
+
+    console.log(stair);
+  }
+}
 
 module.exports = steps;
