@@ -17,7 +17,8 @@
 //       '### '
 //       '####'
 
-function steps(n) {
+// row argument belongs to recursive solution
+function steps(n, row = 0, stair = '') {
   /* My Solution */
   // for (let i = 1; i <= n; i++) {
   //   let step = '';
@@ -35,19 +36,39 @@ function steps(n) {
   //   console.log(step);
   // }
   /* Grider Solution - Recommended */
-  for (let row = 0; row < n; row++) {
-    let stair = ''; 
+  // for (let row = 0; row < n; row++) {
+  //   let stair = ''; 
 
-    for (let column = 0; column < n; column++) {
-      if (column <= row) {
-        stair += '#';
-      } else {
-        stair += ' ';
-      }
-    }
+  //   for (let column = 0; column < n; column++) {
+  //     if (column <= row) {
+  //       stair += '#';
+  //     } else {
+  //       stair += ' ';
+  //     }
+  //   }
 
-    console.log(stair);
+  //   console.log(stair);
+  // }
+
+  /* Grider Recursion Solution */
+  // Base case - All done
+  if (n === row) {
+    return;
   }
+  // Case of hitting end of a row
+  if (n === stair.length) {
+    console.log(stair);
+    // Do not modify stair, because each row will start with an empty string
+    return steps(n, row + 1);
+  }
+  // Do the work to build stair
+  if (stair.length <= row) {
+    stair += '#';
+  } else {
+    stair += ' ';
+  }
+  // Call the function again with a mutated argument
+  steps(n, row, stair);
 }
 
 module.exports = steps;
