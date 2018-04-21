@@ -12,6 +12,10 @@ class Queue {
   add(record) {
     this.data.unshift(record);
   }
+  /* My Solution */
+  peek() {
+    return this.data[this.data.length - 1];
+  }
 
   remove() {
     return this.data.pop();
