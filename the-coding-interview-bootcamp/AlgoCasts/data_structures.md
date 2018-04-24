@@ -27,3 +27,18 @@
   * `.push()` adds a record to the stack
   * `.pop()` removes the "top" record in the stack
   * `.peek()` returns the "top" record without popping it
+
+### Linked Lists
+
+  - An ordered collection of data containing a set of nodes
+    * Contains data and a reference to the next link
+    * AKA a chain of nodes
+  - Terminology
+    * Head: First node
+    * Tail: Last node
+      - Identified by it containing no reference to another node
+    * Node
+      - Contains data (array, string, object, etc)
+      - Reference to the next node in the linked list
+        * `nodeOne.next = nodeTwo;`
+  
