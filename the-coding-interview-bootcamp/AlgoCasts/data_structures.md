@@ -41,4 +41,9 @@
       - Contains data (array, string, object, etc)
       - Reference to the next node in the linked list
         * `nodeOne.next = nodeTwo;`
-  
+  - Example
+    ```const n1 = new Node('Hi');
+       n1.data //'Hi'
+       n1.next // null
+       const n2 = new Node('There', n1);
+       n2.next // returns n1```
