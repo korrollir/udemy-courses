@@ -21,6 +21,24 @@ class LinkedList {
     // of reference for other nodes
     this.head = null;
   }
+  // Returns the node at the provided index
+  getAt(index) {
+    let node = this.head;
+    let counter = 0;
+    // Will run until either node is null or the node at index is found
+    while (node) {
+      if (counter === index) {
+        return node;
+      }
+      
+      counter++;
+      // Move to the next node
+      node = node.next;
+    }
+    // Return null if the index is out of range of the size of the list
+    // The while loop will either return a node or exit before reaching this
+    return null;
+  }
   // Returns the first node of the list
   getFirst() {
     return this.head;
@@ -32,28 +50,55 @@ class LinkedList {
     }
 
     let node = this.head;
-    let tail = node;
 
-    while (node) {
-      tail = node;
-      node = node.next;
-    }
-
-    return tail;
-
-    /* Grider's method - differs at the while loop
     while (node) {
       if (!node.next) {
         return node;
       }
       node = node.next
-    } */
+    }
+  }
+  // Create and insert a new node at provided index.
+  //  If index is out of bounds, add the node to the end of the list.
+  insertAt(index) {
+    
   }
   // Inserts a node in the head position
   insertFirst(data) {
     // Creates the relationship between nodes
     // Updates the head node to reflect the newly created node
     this.head = new Node(data, this.head);
+  }
+  // Inserts a note at the end of the list
+  insertLast(data) {
+    const last = this.getLast();
+    // Check if the list is empty
+    if (last) {
+      // There are nodes in the list
+      last.next = new Node(data);
+    } else {
+      // The list is empty, so create a new head node
+      this.head = new Node(data);
+    }
+  }
+  // Removes node at the provided index
+  removeAt(index) {
+    if (!this.head) {
+      return;
+    }
+    
+    if (index === 0) {
+      // Remove the first node when the index is 0
+      this.head = this.head.next;
+    }
+
+    const previous = this.getAt(index - 1);
+    // Check if the index is out of bounds    
+    if (!previous || !previous.next) {
+      return;
+    }
+
+    previous.next = previous.next.next;
   }
   // Removes only the first node of the list
   removeFirst() {
