@@ -47,3 +47,12 @@
        n1.next // null
        const n2 = new Node('There', n1);
        n2.next // returns n1```
+  - Common solutions
+    * Iterate using two pointers
+      - Midpoint
+        * Slow pointer: 1 step per iteration
+        * Fast pointer: 2 steps per iteration
+        * When fast.next && fast.next.next return null, slow is the midpoint
+      - Circular test
+        * Same as midpoint, except an embedded `if` statement checking for 
+          `slow === fast` to indicate a circular list.
