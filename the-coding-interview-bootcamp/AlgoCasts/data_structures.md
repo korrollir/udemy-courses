@@ -56,3 +56,9 @@
       - Circular test
         * Same as midpoint, except an embedded `if` statement checking for 
           `slow === fast` to indicate a circular list.
+      - `n` fromLast
+        * Two pointers at the head
+        * Move one pointer forward `n` places
+        * Begin moving the two pointers forward one node until the first pointer
+          returns null.
+        * The second pointer is `n` from the tail
