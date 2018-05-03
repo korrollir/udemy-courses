@@ -62,3 +62,19 @@
         * Begin moving the two pointers forward one node until the first pointer
           returns null.
         * The second pointer is `n` from the tail
+
+### Tree
+  - Comprised of nodes
+    * Contains data and reference to a child
+    * Children are directed underneath their parent
+    * Nodes at a given level with a common parent are referred to as siblings
+  - Does not contain methods other than traversal. The Node class manages the data.
+  - Tree traversal: Iterating through elements of a tree
+    * Two methods based on order of search
+      - Breadth-first
+        * Iterating at each level of the tree, left to right, starting at top
+      - Depth-first
+        * Iterating completely down one branch, parent to child, left to right
+        * Return to next closest parent then back down
+        * Try to get to the bottom of the tree as quickly as possible
+  
