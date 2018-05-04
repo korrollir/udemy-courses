@@ -36,11 +36,12 @@ class Tree {
   traverseBF(fn) {
     // Create an empty array and push in root node
     const arr = [this.root];
-    // Iterate through the array: while there are still elements
+    // Iterate through the array while there are still elements
     while (arr.length) {
       // Take out the first element and throw it away
       const node = arr.shift();
-      // Put its children in the array using the spread operatort, which keeps it flat
+      // Put its children onto the end of the array 
+      // Use the spread operator to keep the array flat
       arr.push(...node.children);
       // Call the passed in function with the removed element as an argument
       fn(node);
@@ -48,7 +49,17 @@ class Tree {
   }
 
   traverseDF(fn) {
-
+    // Create an empty array and push in root node
+    const arr = [this.root];
+    // Iterate through the array there are still elements
+    while (arr.length) {
+      // Take out the first element
+      const node = arr.shift();
+      // Put the node's children into the start of the array
+      arr.unshift(...node.children);
+      // Call the passed in function with the removed element as an argument
+      fn(node);
+    }
   }
 }
 
