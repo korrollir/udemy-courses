@@ -77,4 +77,9 @@
         * Iterating completely down one branch, parent to child, left to right
         * Return to next closest parent then back down
         * Try to get to the bottom of the tree as quickly as possible
-  
+      - Examples of when to use which one
+        * Breadth-first
+          - Any time width is used in the problem, go with breadth-first
+          - Level width
+        * Depth-first
+          -
