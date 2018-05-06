@@ -82,4 +82,17 @@
           - Any time width is used in the problem, go with breadth-first
           - Level width
         * Depth-first
-          -
+  - Binary Search Tree
+    * Root node with one node left and one node right
+    * Signified by the use of `search` that requires a specific structure
+    * Restricted to two children
+    * Validates value of the data
+      - Left < parent
+      - Right > parent
+      - Data is normally referred to as key
+    * Most common questions
+      - How to insert new nodes into the tree
+        * Call `insert` at the root node and insert to an appropriate place
+        * Commonly uses incursion
+      - Validate a search tree
+        * Verify that the tree is of a valid structure
