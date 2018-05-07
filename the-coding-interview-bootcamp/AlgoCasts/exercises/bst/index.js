@@ -42,12 +42,13 @@ class Node {
     // Handles recursion all the way down to the right side
     if (this.data < data && this.right) {
       return this.right.contains(data);
+    } else if (this.data > data && this.left) {
+      //  Handles recurion all the way down to the left side
+      return this.left.contains(data);
     }
-    //  Handles recurion all the way down to the left side
-    return this.left.contains(data);
+    // Base case 
+    return null;
   }
-  // Based case 
-  return null;
 }
 
 module.exports = Node;
