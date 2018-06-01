@@ -5,7 +5,8 @@ import {
 export default function(state = [], action) {
   switch (action.type) {
     case FETCH_USERS:
-      return [ ...state, ...action.payload ];
+      // action.payload.data is from the promise request
+      return [ ...state, ...action.payload.data ];
   }
   // Default case
   return state;
