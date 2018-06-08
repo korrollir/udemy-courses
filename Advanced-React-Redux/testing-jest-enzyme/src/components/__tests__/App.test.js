@@ -1,17 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 
-import App from '../App';
+import App from 'components/App';
+import CommentBox from 'components/CommentBox';
+import CommentList from 'components/CommentList';
+
+// Ensure wrapped is available throughout the suite
+// Remember lexical scoping
+// let is used, because the variable will be reassigned multiple times
+let wrapped;
+// beforeEach executes prior to each it block executes
+beforeEach(() => {
+  // Convention to name the wrapped object as wrapped
+  wrapped = shallow(<App />);
+});
 // it implies the name of the component
 it('shows a comment box', () => {
-  const div = document.createElement('div');
+  // Find returns an array, so look for length of 1
+  expect(wrapped.find(CommentBox).length).toEqual(1);
+});
 
-  ReactDOM.render(<App />, div);
-  // Looks inside the div to check if CommentBox is in there
-  // Bad test due to it requiring intimate knowledge of internal implementation
-  // expect(div.innerHTML).toContain('Comment Box');
-  // Instead, check whether the component itself is in the div using enzyme
-
-  // Cleanup method to free memory after the test is complete
-  ReactDOM.unmountComponentAtNode(div);
+it('shows a comment list', () => {
+  expect(wrapped.find(CommentList).length).toEqual(1);
 });

@@ -28,3 +28,17 @@
 * SaveComment Action
   - Has a type of 'SAVE_COMMENT'
   - Produces an action that has a payload of the new comment's text
+
+# Enzyme API
+
+* Static
+  - Render the given component and return plain HTML
+* Shallow
+  - Render "just" the given component and none of its children
+* Full DOM
+  - Render the component and all of its children and let us modify it afterwards
+
+# .env
+
+* Used to set absolute path to the src directory and simplify file imports.
+* Allows components or tests to be moved around in the src directory and will not break anything.
