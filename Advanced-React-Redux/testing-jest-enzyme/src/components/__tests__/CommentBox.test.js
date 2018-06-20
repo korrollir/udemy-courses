@@ -11,7 +11,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-  wrapped.unmout();  
+  wrapped.unmount();  
 });
 
 it('has a textarea and a button', () => {
@@ -19,3 +19,14 @@ it('has a textarea and a button', () => {
   expect(wrapped.find('textarea').length).toEqual(1);
   expect(wrapped.find('button').length).toEqual(1);
 });
+
+it('has a textarea that users can type in', () => {
+  wrapped.find('textarea').simulate('change', {
+    target: { value: 'new comment'} // Emulates event.target.value
+  });
+  // Force the component to update state
+  wrapped.update();
+  // Assert with the correct 'value' prop
+  expect(wrapped.find('textarea').prop('value')).toEqual('new comment');
+});
+  
