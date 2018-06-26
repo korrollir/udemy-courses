@@ -1,12 +1,16 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import reduxPromise from 'redux-promise';
 import reducers from 'reducers';
-
-export default props => {
+// Destructuring initialState prevents other components from breaking after this refactor
+export default ({ children, initialState = {} }) => {
+  // initialState helps the test file
+  // reduxPromise allows the store to function async
+  const store = createStore(reducers, initialState, applyMiddleware(reduxPromise));
   return (
-    <Provider store={createStore(reducers, {})}>
-      {props.children}
+    <Provider store={store}>
+      {children}
     </Provider>
   );
 };
