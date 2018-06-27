@@ -42,3 +42,17 @@
 
 * Used to set absolute path to the src directory and simplify file imports.
 * Allows components or tests to be moved around in the src directory and will not break anything.
+
+# Unit Tests vs. Integration Tests
+
+* Determined by the number of pieces touched in a single test.
+* Unit Tests
+  - Few parts
+  - e.g.
+    * Does the CommentBox show a button?
+    * Does the CommentList produce a list of `<li>` elements?
+    * Does the action creator return an object?
+* Integration Tests
+  - Many parts
+  - e.g.
+    * Does clicking `Fetch Comments` show a list of `<li>`?
