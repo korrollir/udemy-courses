@@ -18,10 +18,10 @@ afterEach(() => {
   wrapped.unmount();  
 });
 
-it('has a textarea and a button', () => {
+it('has a textarea and two buttons', () => {
   // Look in component and find textarea and button
   expect(wrapped.find('textarea').length).toEqual(1);
-  expect(wrapped.find('button').length).toEqual(1);
+  expect(wrapped.find('button').length).toEqual(2);
 });
 
 // describe groups together tests and limits the scope of beforeEach/afterEach statements

@@ -56,3 +56,4 @@
   - Many parts
   - e.g.
     * Does clicking `Fetch Comments` show a list of `<li>`?
+* For smaller projects, tend towards integration tests
