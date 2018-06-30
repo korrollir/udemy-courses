@@ -6,7 +6,7 @@
 
 3. Write a test to verify each part does what is expected
 
-### For example
+## For example
 
 * App component
   - Shows the Comment Box inside of it
