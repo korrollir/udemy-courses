@@ -27,7 +27,7 @@ mongoose.connect('mongodb://localhost:27017/auth');
   ****************
 */
 app.use(morgan('combined'));
-// Tell body-parser to attempt to parsed any incoming request as json
+// Tell body-parser to attempt to parse any incoming request as json
 app.use(bodyParser.json({ type: '*/*' }));
 // Access for routes
 router(app);
