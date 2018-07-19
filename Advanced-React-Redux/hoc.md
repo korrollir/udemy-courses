@@ -27,7 +27,7 @@ HoC argument is named ComposedComponent.
 export default (ChildComponent) => {
   class ComposedComponent extends Component {
     render() {
-      return <ChildComponent />>;
+      return <ChildComponent />;
     }
   }
 
